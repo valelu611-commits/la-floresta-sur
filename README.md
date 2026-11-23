@@ -1,4 +1,4 @@
-# la-floresta-sur-frontend
+# la-floresta-sur
 
 Aplicación web pública para **explorar, buscar y gestionar** los datos del barrio
 **La Floresta Sur** (UPZ 79 Caldas, localidad de Kennedy, Bogotá).
@@ -10,7 +10,7 @@ Interfaz vibrante, buscador central al entrar, mapa interactivo con pines por ca
 
 ## Demo pública
 
-**https://valelu611-commits.github.io/la-floresta-sur-frontend/**
+**https://valelu611-commits.github.io/la-floresta-sur/**
 
 Incluye las 13 categorías, mapa con teselas de Esri (sin clave), buscador y agente de IA.
 Los datos vienen de la API publicada con un túnel gratuito de Cloudflare mientras la máquina local
@@ -22,7 +22,7 @@ sigue encendida. Para un despliegue permanente, sigue [`docs/deployment.md`](doc
 [Este repo] Frontend React  ->  la-floresta-sur-api (REST/Zod)  ->  la-floresta-sur-backend (dominio + ORM)  ->  PostgreSQL/PostGIS | MySQL | SQLite
 ```
 
-- `la-floresta-sur-frontend`: interfaz de usuario (este repositorio).
+- `la-floresta-sur`: interfaz de usuario (este repositorio).
 - [`la-floresta-sur-api`](https://github.com/valelu611-commits/la-floresta-sur-api): contrato REST, validación y seguridad.
 - [`la-floresta-sur-backend`](https://github.com/valelu611-commits/la-floresta-sur-backend): reglas de negocio, ORM y base de datos.
 

@@ -24,7 +24,7 @@ jobs:
           node-version: "24"
           cache: npm
       - run: npm ci
-      - run: npm run build -- --base=/la-floresta-sur-frontend/
+      - run: npm run build -- --base=/la-floresta-sur/
         env:
           VITE_API_URL: ${{ vars.VITE_API_URL }}
       - run: cp dist/index.html dist/404.html

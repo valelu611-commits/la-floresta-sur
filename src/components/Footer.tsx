@@ -2,7 +2,7 @@ import { Github, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const REPOS = [
-  "la-floresta-sur-frontend",
+  "la-floresta-sur",
   "la-floresta-sur-api",
   "la-floresta-sur-backend",
 ];

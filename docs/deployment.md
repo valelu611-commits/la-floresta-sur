@@ -15,7 +15,7 @@ Sin barra final. Si no se define, el build usa `http://localhost:3000/api/v1`.
 
 # Estado actual del despliegue
 
-- Frontend publicado en **https://valelu611-commits.github.io/la-floresta-sur-frontend/**
+- Frontend publicado en **https://valelu611-commits.github.io/la-floresta-sur/**
   (GitHub Pages, workflow `pages.yml`, sin cuentas adicionales).
 - API pública temporal: `https://<tunel>.trycloudflare.com/api/v1`, creada con
   `cloudflared tunnel --url http://localhost:3000`. No requiere clave ni cuenta, pero el link
@@ -27,7 +27,7 @@ Si el túnel se reinicia y cambia la URL:
 
 ```bash
 # 1. anota la nueva URL https://...trycloudflare.com
-gh variable set VITE_API_URL -b "https://NUEVA_URL/api/v1" -R valelu611-commits/la-floresta-sur-frontend
+gh variable set VITE_API_URL -b "https://NUEVA_URL/api/v1" -R valelu611-commits/la-floresta-sur
 # 2. Actions -> Deploy to GitHub Pages -> Run workflow
 ```
 
@@ -103,10 +103,10 @@ tardar ~30 s. Sirve para una demo académica; para producción real se recomiend
 ## Opción G — GitHub Pages (sin cuentas nuevas)
 
 El repo incluye `.github/workflows/pages.yml`. En cada push a `main` compila con
-`--base=/la-floresta-sur-frontend/` y publica en:
+`--base=/la-floresta-sur/` y publica en:
 
 ```text
-https://valelu611-commits.github.io/la-floresta-sur-frontend/
+https://valelu611-commits.github.io/la-floresta-sur/
 ```
 
 Antes de desplegar, define la variable del repositorio (Settings → Secrets and variables →
