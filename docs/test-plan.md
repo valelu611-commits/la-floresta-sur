@@ -28,6 +28,7 @@ npm run verify    # check:size + typecheck + test
 | `tests/CategoryCard.test.tsx` | Tarjeta temática | enlace correcto, nombre/descripción/contador |
 | `tests/Badge.test.tsx` | Insignia | texto y color aplicado |
 | `tests/entities.test.ts` | Mapeo de datos | `entityToHit` por recurso, categoría por defecto, títulos/subtítulos, formato numérico |
+| `tests/localDemo.test.ts` | Demo estática | búsqueda en la instantánea, filtro por categoría, agente local sin servidor |
 
 Cobertura esperada: rutas críticas de datos y componentes con lógica condicional. Las vistas que solo
 componen se validan manualmente en el checklist.

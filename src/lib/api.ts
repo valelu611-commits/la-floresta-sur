@@ -1,26 +1,25 @@
+import { localAsk } from "./localAsk";
+import { ApiError } from "./httpError";
+import { loadCategories, loadStats } from "./localData";
+import { localGet, localList } from "./localReads";
+import { localSearch } from "./localSearch";
+import { qs } from "./queryString";
 import type {
-  AgentAnswer,
   Category,
   Entity,
   Page,
   ResourceName,
-  SearchResponse,
   Stats,
 } from "./types";
+
+export { ApiError };
 
 export const API_BASE = (
   import.meta.env.VITE_API_URL ?? "http://localhost:3000/api/v1"
 ).replace(/\/$/, "");
 
-export class ApiError extends Error {
-  constructor(
-    readonly status: number,
-    message: string,
-  ) {
-    super(message);
-    this.name = "ApiError";
-  }
-}
+/** En el sitio publico se usa la instantanea incluida: sin servidor ni claves. */
+export const STATIC_MODE = import.meta.env.VITE_STATIC_DEMO === "true";
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const controller = new AbortController();
@@ -49,43 +48,45 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   }
 }
 
-function qs(params: Record<string, string | number | undefined>): string {
-  const search = new URLSearchParams();
-  for (const [key, value] of Object.entries(params)) {
-    if (value !== undefined && value !== "") search.set(key, String(value));
+function read<T>(path: string, local: () => Promise<T>, init?: RequestInit): Promise<T> {
+  return STATIC_MODE ? local() : request<T>(path, init);
+}
+
+function write<T>(path: string, init: RequestInit): Promise<T> {
+  if (STATIC_MODE) {
+    return Promise.reject(new ApiError(501, "Modo publico de solo lectura."));
   }
-  const text = search.toString();
-  return text ? `?${text}` : "";
+  return request<T>(path, init);
 }
 
 export const api = {
-  stats: () => request<Stats>("/stats"),
-  categories: () => request<{ data: Category[] }>("/categories"),
+  stats: () => read<Stats>("/stats", loadStats),
+  categories: () => read<{ data: Category[] }>("/categories", loadCategories),
   search: (q: string, limit = 12) =>
-    request<SearchResponse>(`/search${qs({ q, limit })}`),
+    read(`/search${qs({ q, limit })}`, () => localSearch(q, limit)),
   ask: (question: string) =>
-    request<AgentAnswer>("/agent/ask", {
+    read("/agent/ask", () => localAsk(question), {
       method: "POST",
       body: JSON.stringify({ question }),
     }),
   list: (resource: ResourceName, params: Record<string, string | number | undefined> = {}) =>
-    request<Page<Entity>>(`/${resource}${qs(params)}`),
+    read<Page<Entity>>(`/${resource}${qs(params)}`, () => localList(resource, params)),
   get: (resource: ResourceName, id: string) =>
-    request<{ data: Entity }>(`/${resource}/${encodeURIComponent(id)}`),
+    read<{ data: Entity }>(`/${resource}/${encodeURIComponent(id)}`, () => localGet(resource, id)),
   create: (resource: ResourceName, body: Entity, adminKey: string) =>
-    request<{ data: Entity }>(`/${resource}`, {
+    write<{ data: Entity }>(`/${resource}`, {
       method: "POST",
       body: JSON.stringify(body),
       headers: { "x-admin-key": adminKey },
     }),
   update: (resource: ResourceName, id: string, body: Entity, adminKey: string) =>
-    request<{ data: Entity }>(`/${resource}/${encodeURIComponent(id)}`, {
+    write<{ data: Entity }>(`/${resource}/${encodeURIComponent(id)}`, {
       method: "PATCH",
       body: JSON.stringify(body),
       headers: { "x-admin-key": adminKey },
     }),
   remove: (resource: ResourceName, id: string, adminKey: string) =>
-    request<void>(`/${resource}/${encodeURIComponent(id)}`, {
+    write<void>(`/${resource}/${encodeURIComponent(id)}`, {
       method: "DELETE",
       headers: { "x-admin-key": adminKey },
     }),

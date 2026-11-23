@@ -1,0 +1,114 @@
+{
+  "barrio": "La Floresta Sur",
+  "center": {
+    "lat": 4.6112,
+    "lon": -74.1508
+  },
+  "totalRecords": 62,
+  "categories": [
+    {
+      "slug": "seguridad",
+      "name": "Robos y seguridad",
+      "color": "#FF3B5C",
+      "icon": "shield",
+      "resource": "security-incidents",
+      "count": 9
+    },
+    {
+      "slug": "malla-vial",
+      "name": "Estado de calles",
+      "color": "#FFB020",
+      "icon": "road",
+      "resource": "road-segments",
+      "count": 8
+    },
+    {
+      "slug": "catastral",
+      "name": "Datos catastrales",
+      "color": "#22D3EE",
+      "icon": "building",
+      "resource": "cadastral-properties",
+      "count": 8
+    },
+    {
+      "slug": "librerias",
+      "name": "Librerias",
+      "color": "#A855F7",
+      "icon": "book",
+      "resource": "places",
+      "count": 3
+    },
+    {
+      "slug": "cai",
+      "name": "CAI",
+      "color": "#3B82F6",
+      "icon": "badge",
+      "resource": "places",
+      "count": 3
+    },
+    {
+      "slug": "camaras",
+      "name": "Camaras de seguridad",
+      "color": "#64748B",
+      "icon": "camera",
+      "resource": "places",
+      "count": 4
+    },
+    {
+      "slug": "comida",
+      "name": "Sitios de comida",
+      "color": "#F97316",
+      "icon": "utensils",
+      "resource": "places",
+      "count": 6
+    },
+    {
+      "slug": "veterinarias",
+      "name": "Veterinarias",
+      "color": "#10B981",
+      "icon": "paw",
+      "resource": "places",
+      "count": 4
+    },
+    {
+      "slug": "localidad",
+      "name": "Localidad de Kennedy",
+      "color": "#EAB308",
+      "icon": "map",
+      "resource": "localities",
+      "count": 2
+    },
+    {
+      "slug": "zonas-verdes",
+      "name": "Zonas verdes",
+      "color": "#84CC16",
+      "icon": "trees",
+      "resource": "places",
+      "count": 4
+    },
+    {
+      "slug": "transporte",
+      "name": "Transporte",
+      "color": "#06B6D4",
+      "icon": "bus",
+      "resource": "places",
+      "count": 4
+    },
+    {
+      "slug": "deportes",
+      "name": "Escenarios deportivos",
+      "color": "#F43F5E",
+      "icon": "trophy",
+      "resource": "places",
+      "count": 3
+    },
+    {
+      "slug": "educacion",
+      "name": "Centros educativos",
+      "color": "#8B5CF6",
+      "icon": "graduation",
+      "resource": "places",
+      "count": 4
+    }
+  ]
+}

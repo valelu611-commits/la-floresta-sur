@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "id": "0fcae484-0e92-465b-a4bd-2a418759993c",
+      "name": "Kennedy",
+      "code": "08",
+      "mayor": "Alcaldia Local de Kennedy",
+      "population": 1270000,
+      "areaHa": 3856,
+      "upz": "13 UPZ (44 a 82)",
+      "description": "Localidad 8 de Bogota. Limita con Fontibon, Puente Aranda, Bosa y el municipio de Mosquera. Concentra el Portal de las Americas y Corabastos.",
+      "lat": 4.628,
+      "lon": -74.145,
+      "bbox": "-74.1900,4.5800,-74.1000,4.6700",
+      "source": "Datos abiertos de ejemplo",
+      "createdAt": "2026-11-21T02:29:09.665Z",
+      "updatedAt": "2026-11-21T02:29:09.665Z"
+    },
+    {
+      "id": "44d68379-7cbd-4915-b9cd-0c8b5ce72b4c",
+      "name": "La Floresta Sur",
+      "code": "B-79-05",
+      "mayor": "Junta de Accion Comunal La Floresta Sur",
+      "population": 8450,
+      "areaHa": 63,
+      "upz": "UPZ 79 Caldas",
+      "description": "Barrio residencial del sur de Kennedy, con comercio de escala barrial, dos colegios, parque principal y conexion a la Av. Ciudad de Cali.",
+      "lat": 4.6112,
+      "lon": -74.1508,
+      "bbox": "-74.1586,4.6040,-74.1440,4.6182",
+      "source": "Perfil barrial de ejemplo",
+      "createdAt": "2026-11-21T02:29:09.663Z",
+      "updatedAt": "2026-11-21T02:29:09.663Z"
+    }
+  ],
+  "meta": {
+    "total": 2,
+    "limit": 100,
+    "offset": 0
+  }
+}

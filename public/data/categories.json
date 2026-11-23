@@ -1,0 +1,160 @@
+{
+  "data": [
+    {
+      "id": "ace6e1b7-2b0e-42de-9bd4-93aa9378ac1e",
+      "slug": "seguridad",
+      "name": "Robos y seguridad",
+      "resource": "security-incidents",
+      "color": "#FF3B5C",
+      "icon": "shield",
+      "description": "Hurtos, vandalismo y hechos reportados en el barrio.",
+      "sortOrder": 1,
+      "createdAt": "2026-11-21T02:29:09.561Z",
+      "updatedAt": "2026-11-21T02:29:09.561Z"
+    },
+    {
+      "id": "7750463b-86b3-46ef-bd9a-8c3a0186a743",
+      "slug": "malla-vial",
+      "name": "Estado de calles",
+      "resource": "road-segments",
+      "color": "#FFB020",
+      "icon": "road",
+      "description": "Huecos, obras y transitabilidad de la malla vial.",
+      "sortOrder": 2,
+      "createdAt": "2026-11-21T02:29:09.564Z",
+      "updatedAt": "2026-11-21T02:29:09.564Z"
+    },
+    {
+      "id": "465860ae-af6a-4580-98cb-837a97a85e0b",
+      "slug": "catastral",
+      "name": "Datos catastrales",
+      "resource": "cadastral-properties",
+      "color": "#22D3EE",
+      "icon": "building",
+      "description": "Predios, estratos, usos del suelo y referencias catastrales.",
+      "sortOrder": 3,
+      "createdAt": "2026-11-21T02:29:09.565Z",
+      "updatedAt": "2026-11-21T02:29:09.565Z"
+    },
+    {
+      "id": "0a89fbae-67bf-4152-9a19-fb05f16714a7",
+      "slug": "librerias",
+      "name": "Librerias",
+      "resource": "places",
+      "color": "#A855F7",
+      "icon": "book",
+      "description": "Librerias, papelarias y puntos de utiles escolares.",
+      "sortOrder": 4,
+      "createdAt": "2026-11-21T02:29:09.566Z",
+      "updatedAt": "2026-11-21T02:29:09.566Z"
+    },
+    {
+      "id": "3d14edf6-a254-41d4-9d75-23dd91bb160b",
+      "slug": "cai",
+      "name": "CAI",
+      "resource": "places",
+      "color": "#3B82F6",
+      "icon": "badge",
+      "description": "Centros de Atencion Inmediata de la Policia.",
+      "sortOrder": 5,
+      "createdAt": "2026-11-21T02:29:09.568Z",
+      "updatedAt": "2026-11-21T02:29:09.568Z"
+    },
+    {
+      "id": "7c4dacd6-3bb5-47e8-a332-e575937f38db",
+      "slug": "camaras",
+      "name": "Camaras de seguridad",
+      "resource": "places",
+      "color": "#64748B",
+      "icon": "camera",
+      "description": "Camaras de vigilancia y puntos de monitoreo.",
+      "sortOrder": 6,
+      "createdAt": "2026-11-21T02:29:09.569Z",
+      "updatedAt": "2026-11-21T02:29:09.569Z"
+    },
+    {
+      "id": "d2587fe8-93f5-4dce-9359-372dd9713b1c",
+      "slug": "comida",
+      "name": "Sitios de comida",
+      "resource": "places",
+      "color": "#F97316",
+      "icon": "utensils",
+      "description": "Restaurantes, panaderias, asaderos y tiendas.",
+      "sortOrder": 7,
+      "createdAt": "2026-11-21T02:29:09.571Z",
+      "updatedAt": "2026-11-21T02:29:09.571Z"
+    },
+    {
+      "id": "7bb8b239-45ad-4a34-b83b-744b404c538a",
+      "slug": "veterinarias",
+      "name": "Veterinarias",
+      "resource": "places",
+      "color": "#10B981",
+      "icon": "paw",
+      "description": "Atencion veterinaria, vacunacion y pet shops.",
+      "sortOrder": 8,
+      "createdAt": "2026-11-21T02:29:09.572Z",
+      "updatedAt": "2026-11-21T02:29:09.572Z"
+    },
+    {
+      "id": "a24599ed-4b85-4244-9dc4-8f1f476f00f6",
+      "slug": "localidad",
+      "name": "Localidad de Kennedy",
+      "resource": "localities",
+      "color": "#EAB308",
+      "icon": "map",
+      "description": "Contexto de la localidad, UPZ y datos del barrio.",
+      "sortOrder": 9,
+      "createdAt": "2026-11-21T02:29:09.573Z",
+      "updatedAt": "2026-11-21T02:29:09.573Z"
+    },
+    {
+      "id": "2967fc06-a747-470f-806a-3c7dba78542c",
+      "slug": "zonas-verdes",
+      "name": "Zonas verdes",
+      "resource": "places",
+      "color": "#84CC16",
+      "icon": "trees",
+      "description": "Parques, rondas y espacios de recreacion.",
+      "sortOrder": 10,
+      "createdAt": "2026-11-21T02:29:09.575Z",
+      "updatedAt": "2026-11-21T02:29:09.575Z"
+    },
+    {
+      "id": "da2cc31b-d990-436c-8a1e-aa4dd1424e48",
+      "slug": "transporte",
+      "name": "Transporte",
+      "resource": "places",
+      "color": "#06B6D4",
+      "icon": "bus",
+      "description": "TransMilenio, SITP, paraderos y ciclovias.",
+      "sortOrder": 11,
+      "createdAt": "2026-11-21T02:29:09.576Z",
+      "updatedAt": "2026-11-21T02:29:09.576Z"
+    },
+    {
+      "id": "3201394e-9833-46eb-a313-97354fd98d3f",
+      "slug": "deportes",
+      "name": "Escenarios deportivos",
+      "resource": "places",
+      "color": "#F43F5E",
+      "icon": "trophy",
+      "description": "Canchas, polideportivos y espacios para entrenar.",
+      "sortOrder": 12,
+      "createdAt": "2026-11-21T02:29:09.577Z",
+      "updatedAt": "2026-11-21T02:29:09.577Z"
+    },
+    {
+      "id": "0a953b46-d212-4cca-94df-dfd52aeddf2b",
+      "slug": "educacion",
+      "name": "Centros educativos",
+      "resource": "places",
+      "color": "#8B5CF6",
+      "icon": "graduation",
+      "description": "Colegios, jardines y bibliotecas escolares.",
+      "sortOrder": 13,
+      "createdAt": "2026-11-21T02:29:09.579Z",
+      "updatedAt": "2026-11-21T02:29:09.579Z"
+    }
+  ]
+}

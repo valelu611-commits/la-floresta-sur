@@ -13,8 +13,10 @@ Interfaz vibrante, buscador central al entrar, mapa interactivo con pines por ca
 **https://valelu611-commits.github.io/la-floresta-sur/**
 
 Incluye las 13 categorías, mapa con teselas de Esri (sin clave), buscador y agente de IA.
-Los datos vienen de la API publicada con un túnel gratuito de Cloudflare mientras la máquina local
-sigue encendida. Para un despliegue permanente, sigue [`docs/deployment.md`](docs/deployment.md).
+La versión pública es **completamente estática**: lleva incluida una instantánea de los 62
+registros en `public/data`, así que funciona para cualquier persona con el link aunque no haya
+servidor. El CRUD completo se usa en local con la API. Para actualizar la instantánea:
+`npm run data:export`. Ver [`docs/deployment.md`](docs/deployment.md).
 
 ## Rol en la arquitectura de 3 capas
 
@@ -85,6 +87,7 @@ Las variables de Vite se **inyectan en build**: cambia `VITE_API_URL` y vuelve a
 | `npm test` | Pruebas con Vitest |
 | `npm run typecheck` | TypeScript estricto sin emitir |
 | `npm run check:size` | Verifica el límite de 100 líneas por archivo |
+| `npm run data:export` | Exporta la API a `public/data` (instantánea de la demo pública) |
 | `npm run verify` | Tamaño + tipos + pruebas (lo que corre CI) |
 
 ## Regla de las 100 líneas

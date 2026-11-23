@@ -3,33 +3,35 @@
 Este es el **cuarto y último** paso de la guía global (base de datos → backend → API → frontend).
 El orden importa: la SPA necesita la URL pública de la API en tiempo de build.
 
-## Requisito: `VITE_API_URL`
+## Modos de la aplicación
 
-Vite inyecta las variables en el momento de compilar. Define:
+La SPA tiene dos modos controlados por variables de Vite (se inyectan al compilar):
 
-```env
-VITE_API_URL=https://<api-publica>/api/v1
-```
+| Modo | Variable | Datos | Escritura |
+| --- | --- | --- | --- |
+| Desarrollo / servidor propio | `VITE_STATIC_DEMO=false` (default) | API REST en `VITE_API_URL` | CRUD completo |
+| Demo pública | `VITE_STATIC_DEMO=true` | Instantánea JSON en `public/data` | Solo lectura |
 
-Sin barra final. Si no se define, el build usa `http://localhost:3000/api/v1`.
+`VITE_API_URL` sin barra final; si no se define se usa `http://localhost:3000/api/v1`.
 
 # Estado actual del despliegue
 
 - Frontend publicado en **https://valelu611-commits.github.io/la-floresta-sur/**
-  (GitHub Pages, workflow `pages.yml`, sin cuentas adicionales).
-- API pública temporal: `https://<tunel>.trycloudflare.com/api/v1`, creada con
-  `cloudflared tunnel --url http://localhost:3000`. No requiere clave ni cuenta, pero el link
-  cambia si se reinicia el túnel y deja de funcionar cuando se apaga la máquina.
-- Backend interno en `http://localhost:4000` (SQLite local ya migrado y sembrado).
-- Variable del repo `VITE_API_URL` apunta al túnel; Vite la inyecta al compilar.
+  (GitHub Pages, workflow `pages.yml`, sin cuentas ni servidores adicionales).
+- Build del sitio público con `VITE_STATIC_DEMO=true`: stats, categorías, búsquedas, fichas, mapa y
+  agente funcionan solo con archivos JSON incluidos en el sitio. **No depende de tu PC.**
+- Para desarrollar con CRUD real: `VITE_STATIC_DEMO=false` y `VITE_API_URL=http://localhost:3000/api/v1`.
 
-Si el túnel se reinicia y cambia la URL:
+## Actualizar la instantánea de datos
 
 ```bash
-# 1. anota la nueva URL https://...trycloudflare.com
-gh variable set VITE_API_URL -b "https://NUEVA_URL/api/v1" -R valelu611-commits/la-floresta-sur
-# 2. Actions -> Deploy to GitHub Pages -> Run workflow
+# con backend (:4000) y API (:3000) corriendo en local
+npm run data:export
+git add public/data && git commit -m "docs: actualizar instantanea de datos publicos"
+git push
 ```
+
+El push dispara GitHub Pages: recompila con los datos nuevos y el link sigue siendo el mismo.
 
 ## Opción A — Vercel (recomendada)
 
