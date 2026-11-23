@@ -8,6 +8,14 @@ Interfaz vibrante, buscador central al entrar, mapa interactivo con pines por ca
 
 > Demo académica: los datos son ilustrativos y aproximados; no sustituyen fuentes oficiales.
 
+## Demo pública
+
+**https://valelu611-commits.github.io/la-floresta-sur-frontend/**
+
+Incluye las 13 categorías, mapa con teselas de Esri (sin clave), buscador y agente de IA.
+Los datos vienen de la API publicada con un túnel gratuito de Cloudflare mientras la máquina local
+sigue encendida. Para un despliegue permanente, sigue [`docs/deployment.md`](docs/deployment.md).
+
 ## Rol en la arquitectura de 3 capas
 
 ```text

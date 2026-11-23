@@ -13,6 +13,24 @@ VITE_API_URL=https://<api-publica>/api/v1
 
 Sin barra final. Si no se define, el build usa `http://localhost:3000/api/v1`.
 
+# Estado actual del despliegue
+
+- Frontend publicado en **https://valelu611-commits.github.io/la-floresta-sur-frontend/**
+  (GitHub Pages, workflow `pages.yml`, sin cuentas adicionales).
+- API pública temporal: `https://<tunel>.trycloudflare.com/api/v1`, creada con
+  `cloudflared tunnel --url http://localhost:3000`. No requiere clave ni cuenta, pero el link
+  cambia si se reinicia el túnel y deja de funcionar cuando se apaga la máquina.
+- Backend interno en `http://localhost:4000` (SQLite local ya migrado y sembrado).
+- Variable del repo `VITE_API_URL` apunta al túnel; Vite la inyecta al compilar.
+
+Si el túnel se reinicia y cambia la URL:
+
+```bash
+# 1. anota la nueva URL https://...trycloudflare.com
+gh variable set VITE_API_URL -b "https://NUEVA_URL/api/v1" -R valelu611-commits/la-floresta-sur-frontend
+# 2. Actions -> Deploy to GitHub Pages -> Run workflow
+```
+
 ## Opción A — Vercel (recomendada)
 
 ```bash
