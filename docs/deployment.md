@@ -70,6 +70,18 @@ La API admite orígenes configurables (`CORS_ORIGINS`). Al desplegar, agrega el 
 CORS_ORIGINS=https://la-floresta-sur.vercel.app,http://localhost:5173
 ```
 
+## Capas gratuitas sugeridas
+
+| Pieza | Servicio | Plan gratuito |
+| --- | --- | --- |
+| Frontend | Vercel / Netlify | Hobby / Starter: sitios estáticos ilimitados con HTTPS |
+| API | Render / Fly.io | Web Service gratuito (se suspende sin tráfico) |
+| Backend | Render | Web Service gratuito con 512 MB |
+| Base de datos | Neon / Supabase (PostgreSQL) | 0.5 GB – 500 MB con conexión TLS |
+
+La API y el backend gratuitos se "duermen" tras unos minutos sin uso: la primera petición puede
+tardar ~30 s. Sirve para una demo académica; para producción real se recomienda un plan pago.
+
 ## Problemas comunes
 
 | Síntoma | Causa probable | Solución |
