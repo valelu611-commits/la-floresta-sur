@@ -82,6 +82,26 @@ CORS_ORIGINS=https://la-floresta-sur.vercel.app,http://localhost:5173
 La API y el backend gratuitos se "duermen" tras unos minutos sin uso: la primera petición puede
 tardar ~30 s. Sirve para una demo académica; para producción real se recomienda un plan pago.
 
+## Opción G — GitHub Pages (sin cuentas nuevas)
+
+El repo incluye `.github/workflows/pages.yml`. En cada push a `main` compila con
+`--base=/la-floresta-sur-frontend/` y publica en:
+
+```text
+https://valelu611-commits.github.io/la-floresta-sur-frontend/
+```
+
+Antes de desplegar, define la variable del repositorio (Settings → Secrets and variables →
+Actions → Variables → New repository variable):
+
+```text
+VITE_API_URL = https://<api-publica>/api/v1
+```
+
+Luego vuelve a ejecutar el workflow (Actions → Deploy to GitHub Pages → Run workflow). El router usa
+`import.meta.env.BASE_URL` como `basename` y se copia `index.html` a `404.html` para que las rutas
+profundas (`/categoria/...`, `/detalle/...`) funcionen al recargar.
+
 ## Problemas comunes
 
 | Síntoma | Causa probable | Solución |

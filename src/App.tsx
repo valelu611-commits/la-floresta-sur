@@ -10,8 +10,10 @@ import { MapPage } from "./pages/MapPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 
 export function App() {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={base}>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
