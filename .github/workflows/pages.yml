@@ -27,6 +27,7 @@ jobs:
       - run: npm run build -- --base=/la-floresta-sur/
         env:
           VITE_STATIC_DEMO: "true"
+      - run: node scripts/prerender-paths.mjs
       - run: cp dist/index.html dist/404.html
       - uses: actions/upload-pages-artifact@v3
         with:

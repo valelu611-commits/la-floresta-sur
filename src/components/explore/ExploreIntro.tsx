@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Filter } from "lucide-react";
 import { SearchHero } from "../SearchHero";
 import { FALLBACK_CATEGORIES } from "../../lib/fallback";
@@ -32,13 +33,13 @@ export function ExploreIntro({ query, category }: ExploreIntroProps) {
           <Filter className="h-3.5 w-3.5" /> Filtros rápidos
         </span>
         {FALLBACK_CATEGORIES.map((item) => (
-          <a
+          <Link
             key={item.slug}
-            href={`/categoria/${item.slug}`}
+            to={`/categoria/${item.slug}`}
             className="chip border-white/10 bg-white/5 text-slate-300 hover:border-neon-pink hover:text-white"
           >
             {item.name}
-          </a>
+          </Link>
         ))}
       </div>
     </section>
