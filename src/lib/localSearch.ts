@@ -3,11 +3,42 @@ import { entityToHit } from "./entities";
 import { ALL_RESOURCES, loadResource } from "./localData";
 import type { Entity, SearchHit, SearchResponse } from "./types";
 
+/** Sinonimos comunes -> categoria, para buscar "parques" y encontrar "Zonas verdes". */
+const SLUG_BY_WORD: Record<string, string> = {
+  parque: "zonas-verdes",
+  parques: "zonas-verdes",
+  verde: "zonas-verdes",
+  robos: "seguridad",
+  robo: "seguridad",
+  hurto: "seguridad",
+  bus: "transporte",
+  transmilenio: "transporte",
+  transportes: "transporte",
+  camara: "camaras",
+  camaras: "camaras",
+  restaurantes: "comida",
+  comidas: "comida",
+  veterinaria: "veterinarias",
+  mascotas: "veterinarias",
+  colegios: "educacion",
+  educacion: "educacion",
+  canchas: "deportes",
+  deporte: "deportes",
+  estrato: "catastral",
+  predios: "catastral",
+  calles: "malla-vial",
+  huecos: "malla-vial",
+};
+
 function matches(entity: Entity, hit: SearchHit, tokens: string[]): boolean {
   const text = `${Object.values(entity).join(" ")} ${hit.title} ${
     CATEGORY_NAMES[hit.categorySlug] ?? ""
   }`.toLowerCase();
-  return tokens.every((token) => text.includes(token));
+  return tokens.every((token) => {
+    if (text.includes(token)) return true;
+    const slug = SLUG_BY_WORD[token];
+    return slug ? text.includes((CATEGORY_NAMES[slug] ?? "").toLowerCase()) : false;
+  });
 }
 
 export async function localSearch(q: string, limit = 12): Promise<SearchResponse> {

@@ -28,6 +28,12 @@ describe("demo estatica sin servidor", () => {
     expect(result.countsByCategory.veterinarias).toBe(4);
   });
 
+  it("encuentra zonas verdes al buscar parques", async () => {
+    const result = await localSearch("parques", 10);
+    expect(result.total).toBeGreaterThan(0);
+    expect(result.countsByCategory["zonas-verdes"]).toBeGreaterThan(0);
+  });
+
   it("filtra un listado por categoria", async () => {
     const page = await localList("places", { category: "cai", limit: 20 });
     expect(page.meta.total).toBe(3);
