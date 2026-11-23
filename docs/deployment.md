@@ -33,6 +33,10 @@ git push
 
 El push dispara GitHub Pages: recompila con los datos nuevos y el link sigue siendo el mismo.
 
+El workflow también ejecuta `node scripts/prerender-paths.mjs`, que copia `index.html` en las rutas
+de categorías y fichas conocidas (79 rutas). Así esas direcciones responden **200** al abrirlas o
+recargarlas; las rutas nuevas caen en `404.html`, que arranca la app igual.
+
 ## Opción A — Vercel (recomendada)
 
 ```bash

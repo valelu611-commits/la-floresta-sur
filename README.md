@@ -88,6 +88,7 @@ Las variables de Vite se **inyectan en build**: cambia `VITE_API_URL` y vuelve a
 | `npm run typecheck` | TypeScript estricto sin emitir |
 | `npm run check:size` | Verifica el límite de 100 líneas por archivo |
 | `npm run data:export` | Exporta la API a `public/data` (instantánea de la demo pública) |
+| `node scripts/prerender-paths.mjs` | Genera `index.html` en rutas conocidas para evitar 404 en GitHub Pages |
 | `npm run verify` | Tamaño + tipos + pruebas (lo que corre CI) |
 
 ## Regla de las 100 líneas
