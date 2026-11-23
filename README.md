@@ -132,6 +132,7 @@ Guía completa (Docker, Vercel, Netlify, variables y orden de despliegue):
 
 ## Documentación
 
+- [`docs/presentacion.md`](docs/presentacion.md): guion de exposición de 5 a 10 minutos.
 - [`docs/architecture.md`](docs/architecture.md): capas y UML en Mermaid.
 - [`docs/test-plan.md`](docs/test-plan.md): modelo de pruebas ejecutable.
 - [`docs/deployment.md`](docs/deployment.md): guía de despliegue público.
